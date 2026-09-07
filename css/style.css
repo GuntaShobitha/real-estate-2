@@ -161,6 +161,12 @@ button {
   padding-right: 24px;
 }
 
+.blog-subscribe-input-wrap {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
 .section {
   padding: 110px 0;
   position: relative;
@@ -947,6 +953,10 @@ button {
   .nav-menu,
   .btn-nav-login {
     display: none !important;
+  }
+
+  .blog-subscribe-input-wrap {
+    flex-direction: column;
   }
   .nav-hamburger {
     display: flex !important;

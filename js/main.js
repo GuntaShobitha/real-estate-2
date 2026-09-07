@@ -1009,15 +1009,91 @@ function initServicesSnapScroll() {
     });
   });
 
-  // Keyboard navigation
+  /* ------------------------------------------------------------------
+     FOOTER HAND-OFF
+
+     The slide deck is its own 100vh inner scroller, so the window only
+     ever scrolls past the LAST slide to reveal the footer. That hand-off
+     relies on native scroll chaining, which does not happen reliably in
+     every browser / pointer position. This makes it explicit:
+
+       • Scrolling down while the deck is at its end opens the footer,
+         no matter where the pointer is.
+       • Scrolling up while the footer is open closes it first; the deck
+         only scrolls again once the footer is fully out of the way.
+     ------------------------------------------------------------------ */
+  const lastSectionIndex = sections.length - 1;
+  const isFooterOpen = () => window.scrollY > 0;
+  const isDeckAtBottom = () => container.scrollTop + container.clientHeight >= container.scrollHeight - 2;
+  const windowMaxScroll = () => Math.max(document.documentElement.scrollHeight - window.innerHeight, 0);
+
+  // The page declares `scroll-behavior: smooth` on <html>, which would make
+  // per-wheel scrollBy() calls animate. Temporarily disable it while the
+  // user is wheeling so boundary motion stays native and continuous.
+  let smoothResetTimer = null;
+  const windowScrollByPx = (dy) => {
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollBy(0, dy);
+    clearTimeout(smoothResetTimer);
+    smoothResetTimer = setTimeout(() => {
+      document.documentElement.style.scrollBehavior = '';
+    }, 150);
+  };
+
+  const revealFooter = () => {
+    window.scrollTo({ top: windowMaxScroll(), behavior: 'smooth' });
+  };
+
+  window.addEventListener('wheel', (e) => {
+    if (e.ctrlKey) return; // never hijack pinch-zoom gestures
+    let dy = e.deltaY;
+    if (e.deltaMode === 1) dy *= 16;                    // lines -> px
+    else if (e.deltaMode === 2) dy *= window.innerHeight; // pages -> px
+    if (!dy) return;
+
+    if (dy < 0) {
+      // Upward scroll with the footer open: close the footer first,
+      // regardless of pointer position. Without this, the browser would
+      // scroll the hidden deck underneath instead.
+      if (isFooterOpen()) {
+        e.preventDefault();
+        windowScrollByPx(dy);
+      }
+      return;
+    }
+
+    // Downward scroll once the last slide is reached: open the footer,
+    // regardless of pointer position. Between slides the container's own
+    // snap scrolling handles the gesture.
+    if (!isFooterOpen() && isDeckAtBottom()) {
+      e.preventDefault();
+      windowScrollByPx(dy);
+    }
+  }, { passive: false });
+
+  // Keyboard navigation (also crosses the deck -> footer boundary)
   document.addEventListener('keydown', (e) => {
-    if (!document.getElementById('servicesSnapContainer')) return;
     if (e.key === 'ArrowDown' || e.key === 'PageDown') {
       e.preventDefault();
-      scrollToSection(currentIndex + 1);
+      if (isFooterOpen()) {
+        // Keep scrolling through the footer
+        const remaining = windowMaxScroll() - window.scrollY;
+        if (remaining > 0) {
+          window.scrollBy({ top: Math.min(remaining, window.innerHeight * 0.9), behavior: 'smooth' });
+        }
+      } else if (currentIndex < lastSectionIndex) {
+        scrollToSection(currentIndex + 1);
+      } else {
+        revealFooter();
+      }
     } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
       e.preventDefault();
-      scrollToSection(currentIndex - 1);
+      if (isFooterOpen()) {
+        // Close the footer first, then the deck can scroll back up
+        window.scrollBy({ top: -window.innerHeight * 0.9, behavior: 'smooth' });
+      } else {
+        scrollToSection(currentIndex - 1);
+      }
     }
   });
 }
