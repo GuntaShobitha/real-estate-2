@@ -1170,54 +1170,54 @@ function initBlogFormValidation() {
    ========================================================================== */
 const REALTIME_WEBP_IMAGES = {
   // Properties
-  'penthouse-sky': 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80&fm=webp',
-  'coastal-villa': 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80&fm=webp',
-  'modern-estate': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80&fm=webp',
-  'dubai-residence': 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80&fm=webp',
-  'aspen-chalet': 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80&fm=webp',
-  'london-townhouse': 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80&fm=webp',
-  'manhattan-loft': 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80&fm=webp',
-  'monaco-harbor': 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80&fm=webp',
-  'tokyo-modern': 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=80&fm=webp',
-  'hero-mansion': 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=80&fm=webp',
-  'architectural-gem': 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80&fm=webp',
+  'penthouse-sky': 'images/penthouse-sky.webp',
+  'coastal-villa': 'images/coastal-villa.webp',
+  'modern-estate': 'images/modern-estate.webp',
+  'dubai-residence': 'images/dubai-residence.webp',
+  'aspen-chalet': 'images/aspen-chalet.webp',
+  'london-townhouse': 'images/london-townhouse.webp',
+  'manhattan-loft': 'images/manhattan-loft.webp',
+  'monaco-harbor': 'images/monaco-harbor.webp',
+  'tokyo-modern': 'images/tokyo-modern.webp',
+  'hero-mansion': 'images/hero-mansion.webp',
+  'architectural-gem': 'images/architectural-gem.webp',
 
   // Heritage & About
-  'about-hero': 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80&fm=webp',
-  'about-heritage': 'https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80&fm=webp',
+  'about-hero': 'images/about-hero.webp',
+  'about-heritage': 'images/about-heritage.webp',
 
   // Interiors
-  'interior-1': 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80&fm=webp',
-  'interior-2': 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80&fm=webp',
-  'interior-3': 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80&fm=webp',
+  'interior-1': 'images/interior-1.webp',
+  'interior-2': 'images/interior-2.webp',
+  'interior-3': 'images/interior-3.webp',
 
   // Agents & Leadership
-  'agent-1': 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80&fm=webp',
-  'agent-2': 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80&fm=webp',
-  'agent-3': 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80&fm=webp',
-  'agent-4': 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80&fm=webp',
+  'agent-1': 'images/agent-1.webp',
+  'agent-2': 'images/agent-2.webp',
+  'agent-3': 'images/agent-3.webp',
+  'agent-4': 'images/agent-4.webp',
 
   // Clients
-  'client-1': 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80&fm=webp',
-  'client-2': 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80&fm=webp',
-  'client-3': 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80&fm=webp',
+  'client-1': 'images/client-1.webp',
+  'client-2': 'images/client-2.webp',
+  'client-3': 'images/client-3.webp',
 
   // Services
-  'service-buying': 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80&fm=webp',
-  'service-selling': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80&fm=webp',
-  'service-invest': 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80&fm=webp',
-  'service-mgmt': 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80&fm=webp',
-  'service-legal': 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1000&q=80&fm=webp',
-  'service-design': 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80&fm=webp',
-  'service-relocation': 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1000&q=80&fm=webp',
+  'service-buying': 'images/service-buying.webp',
+  'service-selling': 'images/service-selling.webp',
+  'service-invest': 'images/service-invest.webp',
+  'service-mgmt': 'images/service-mgmt.webp',
+  'service-legal': 'images/service-legal.webp',
+  'service-design': 'images/service-design.webp',
+  'service-relocation': 'images/service-relocation.webp',
 
   // Blog & Intelligence
-  'blog-1': 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1000&q=80&fm=webp',
-  'blog-2': 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1000&q=80&fm=webp',
-  'blog-3': 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80&fm=webp',
-  'blog-4': 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=80&fm=webp',
-  'blog-5': 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1000&q=80&fm=webp',
-  'blog-6': 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80&fm=webp'
+  'blog-1': 'images/blog-1.webp',
+  'blog-2': 'images/blog-2.webp',
+  'blog-3': 'images/blog-3.webp',
+  'blog-4': 'images/blog-4.webp',
+  'blog-5': 'images/blog-5.webp',
+  'blog-6': 'images/blog-6.webp'
 };
 
 function initLuxuryImageGenerators() {
