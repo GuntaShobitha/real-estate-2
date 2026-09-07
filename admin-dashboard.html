@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Admin Suite | STACKLY Global Real Estate Management</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- ==========================================================================
+         LEFT SIDEBAR NAVBAR (ADMIN THEME)
+         ========================================================================== -->
+    <aside class="dash-sidebar">
+      <div class="dash-sidebar-header">
+        <a href="javascript:void(0)" class="nav-logo" onclick="document.querySelector('[data-tab=\'tab-admin-overview\']').click();">
+          <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="nav-logo-fallback" style="display: none;">
+            <div class="logo-crest">S</div>
+            <div class="logo-text">STACK<span>LY</span></div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Admin Profile Card -->
+      <div class="dash-user-profile">
+        <div class="dash-avatar-placeholder" style="background: linear-gradient(135deg, #f5e6a8, #d4af37);">
+          <span class="material-symbols-outlined" style="font-size: 1.6rem; color: #07090e;">admin_panel_settings</span>
+        </div>
+        <div class="dash-user-info">
+          <div class="dash-user-name dynamic-user-name">Chief Executive Admin</div>
+          <span class="dash-role-badge role-admin-badge">Admin Master</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="dash-nav">
+        <div class="dash-nav-item active" data-tab="tab-admin-overview">
+          <span class="material-symbols-outlined">insights</span>
+          KPI Analytics
+        </div>
+        <div class="dash-nav-item" data-tab="tab-admin-properties">
+          <span class="material-symbols-outlined">domain</span>
+          Estate Inventory (CRUD)
+        </div>
+        <div class="dash-nav-item" data-tab="tab-admin-leads">
+          <span class="material-symbols-outlined">groups</span>
+          CRM Leads & Inquiries
+        </div>
+        <div class="dash-nav-item" data-tab="tab-admin-agents">
+          <span class="material-symbols-outlined">badge</span>
+          Agent Directory
+        </div>
+        <div class="dash-nav-item" data-tab="tab-admin-logs">
+          <span class="material-symbols-outlined">history</span>
+          Audit Logs
+        </div>
+        <div class="dash-nav-item" data-tab="tab-admin-settings">
+          <span class="material-symbols-outlined">settings</span>
+          System Settings
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer with Settings and Logout -->
+      <div class="dash-sidebar-footer">
+        <a href="#settings" class="btn-sidebar-action" onclick="document.querySelector('[data-tab=\'tab-admin-settings\']').click();">
+          <span class="material-symbols-outlined">tune</span>
+          Platform Config
+        </a>
+        <button class="btn-sidebar-action btn-sidebar-logout" onclick="logoutUser()">
+          <span class="material-symbols-outlined">logout</span>
+          Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         MAIN CONTENT AREA
+         ========================================================================== -->
+    <main class="dash-main">
+      <div class="dash-topbar">
+        <div>
+          <button class="mobile-dash-toggle" aria-label="Toggle Sidebar">
+            <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 1.2rem;">menu</span> Menu
+          </button>
+          <h1 class="dash-greeting-title">Global Operations <span class="gold-gradient-text">Command</span></h1>
+          <p class="dash-greeting-sub">Live Escrow, Inventory & Sovereign Portfolio Oversight</p>
+        </div>
+        <div class="dash-topbar-actions">
+          <a href="./404.html" class="btn btn-outline-gold btn-sm">View Website</a>
+          <button id="btnOpenAddPropertyModal" class="btn btn-gold btn-sm"> New Listing</button>
+        </div>
+      </div>
+
+      <!-- TAB 1: ADMIN OVERVIEW & CHARTS -->
+      <section id="tab-admin-overview" class="dash-panel active">
+        <div class="dash-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Active Portfolio Value</div>
+            <div class="kpi-val">$1.84B</div>
+            <div class="kpi-trend trend-up">↑ 14.8% vs Last Quarter</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Pending Escrow Volume</div>
+            <div class="kpi-val">$245M</div>
+            <div class="kpi-trend trend-up">6 Sovereign Mandates</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Verified HNW Inquiries</div>
+            <div class="kpi-val">128</div>
+            <div class="kpi-trend trend-up">↑ 22% This Month</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Active Global Hubs</div>
+            <div class="kpi-val">28</div>
+            <div class="kpi-trend trend-up">100% System Uptime</div>
+          </div>
+        </div>
+
+        <div class="grid-2col" style="margin-bottom: 36px; align-items: stretch;">
+          <!-- Chart 1: Revenue Trends -->
+          <div class="dash-chart-card">
+            <div class="dash-table-header">
+              <h3 class="dash-table-title">Cumulative Escrow Volume ($ Millions)</h3>
+            </div>
+            <canvas id="revenueChartCanvas" class="chart-canvas"></canvas>
+          </div>
+
+          <!-- Chart 2: Weekly Inquiries -->
+          <div class="dash-chart-card">
+            <div class="dash-table-header">
+              <h3 class="dash-table-title">Weekly Private Inquiries</h3>
+            </div>
+            <canvas id="trafficChartCanvas" class="chart-canvas"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: PROPERTY INVENTORY CRUD -->
+      <section id="tab-admin-properties" class="dash-panel">
+        <div class="dash-table-card">
+          <div class="dash-table-header">
+            <h3 class="dash-table-title">Global Portfolio Inventory Management</h3>
+            <button class="btn btn-gold btn-sm" onclick="document.getElementById('addPropertyModal').classList.add('open');">Add Property</button>
+          </div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Location</th>
+                  <th>Valuation</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminPropertyTableBody">
+                <tr>
+                  <td><strong>The Sky Crest Penthouse</strong></td>
+                  <td>Manhattan, NY</td>
+                  <td><span style="color: var(--gold-light); font-weight: 700;">$28,500,000</span></td>
+                  <td><span class="status-pill status-active">Active</span></td>
+                  <td>
+                    <button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Villa Solaria Waterfront</strong></td>
+                  <td>Cap d'Antibes, Monaco</td>
+                  <td><span style="color: var(--gold-light); font-weight: 700;">€34,000,000</span></td>
+                  <td><span class="status-pill status-active">Active</span></td>
+                  <td>
+                    <button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>The Bel-Air Glass Pavilion</strong></td>
+                  <td>Bel-Air, Los Angeles</td>
+                  <td><span style="color: var(--gold-light); font-weight: 700;">$42,000,000</span></td>
+                  <td><span class="status-pill status-active">Active</span></td>
+                  <td>
+                    <button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Palm Jumeirah Royal Villa</strong></td>
+                  <td>Dubai, UAE</td>
+                  <td><span style="color: var(--gold-light); font-weight: 700;">AED 95,000,000</span></td>
+                  <td><span class="status-pill status-pending">Under Escrow</span></td>
+                  <td>
+                    <button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: CRM LEADS & INQUIRIES -->
+      <section id="tab-admin-leads" class="dash-panel">
+        <div class="dash-table-card">
+          <div class="dash-table-header">
+            <h3 class="dash-table-title">Confidential Client Inquiries & Mandates</h3>
+            <button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">Export CSV</button>
+          </div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Client / Entity</th>
+                  <th>Target Allocation</th>
+                  <th>Destination Metro</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Harrison Sterling (Private Equity)</strong></td>
+                  <td>$25M – $50M USD</td>
+                  <td>Manhattan & Mayfair</td>
+                  <td><span class="status-pill lead-status-badge status-active">Qualified</span></td>
+                  <td>
+                    <button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">Mark Contacted</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Dr. Elena Rostova (Zurich Trust)</strong></td>
+                  <td>$20M+ USD</td>
+                  <td>Aspen & Swiss Alps</td>
+                  <td><span class="status-pill lead-status-badge status-pending">Pending Call</span></td>
+                  <td>
+                    <button class="btn btn-gold btn-sm" onclick="window.location.href='./404.html'">Respond</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Tariq Bin Zaid (Family Office)</strong></td>
+                  <td>$50M+ Sovereign</td>
+                  <td>Palm Jumeirah Dubai</td>
+                  <td><span class="status-pill lead-status-badge status-active">VIP Priority</span></td>
+                  <td>
+                    <button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">Close Mandate</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: AGENTS DIRECTORY -->
+      <section id="tab-admin-agents" class="dash-panel">
+        <div class="dash-table-card">
+          <div class="dash-table-header">
+            <h3 class="dash-table-title">Managing Partners & Regional Leads</h3>
+          </div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Director</th>
+                  <th>Jurisdiction</th>
+                  <th>Closed Volume</th>
+                  <th>Active Mandates</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Victoria Sterling</strong></td>
+                  <td>New York & London</td>
+                  <td><span style="color: var(--gold-light); font-weight: 700;">$1.4B+</span></td>
+                  <td>8 Trophy Estates</td>
+                </tr>
+                <tr>
+                  <td><strong>Alexander Vance</strong></td>
+                  <td>Monaco & Côte d'Azur</td>
+                  <td><span style="color: var(--gold-light); font-weight: 700;">€980M+</span></td>
+                  <td>5 Waterfront Mansions</td>
+                </tr>
+                <tr>
+                  <td><strong>Soraya Al-Mansoor</strong></td>
+                  <td>Dubai & Abu Dhabi</td>
+                  <td><span style="color: var(--gold-light); font-weight: 700;">AED 3.2B+</span></td>
+                  <td>9 Signature Villas</td>
+                </tr>
+                <tr>
+                  <td><strong>Kenjiro Takahashi</strong></td>
+                  <td>Tokyo & Singapore</td>
+                  <td><span style="color: var(--gold-light); font-weight: 700;">$820M+</span></td>
+                  <td>4 Modern Towers</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: AUDIT LOGS -->
+      <section id="tab-admin-logs" class="dash-panel">
+        <div class="dash-table-card">
+          <h3 class="dash-table-title" style="margin-bottom: 20px;">System Security & Transaction Audit Logs</h3>
+          <ul style="display: flex; flex-direction: column; gap: 14px; font-size: 0.88rem; color: var(--text-secondary);">
+            <li style="padding: 12px 16px; background: rgba(255,255,255,0.02); border-left: 3px solid var(--gold-primary); border-radius: var(--radius-sm);">
+              <span style="color: var(--gold-light); font-weight: 600;">[2026-09-02 12:45:10 UTC]</span> Escrow deposit of €3.4M verified for Villa Solaria via Swiss custody vault.
+            </li>
+            <li style="padding: 12px 16px; background: rgba(255,255,255,0.02); border-left: 3px solid var(--emerald); border-radius: var(--radius-sm);">
+              <span style="color: var(--gold-light); font-weight: 600;">[2026-09-02 11:15:32 UTC]</span> Biometric showing authorized for Lord Harrison Sterling at Sky Crest Penthouse.
+            </li>
+            <li style="padding: 12px 16px; background: rgba(255,255,255,0.02); border-left: 3px solid var(--blue); border-radius: var(--radius-sm);">
+              <span style="color: var(--gold-light); font-weight: 600;">[2026-09-02 09:30:18 UTC]</span> New $42M Bel-Air Glass Pavilion added to Global VIP MLS by Admin Desk.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- TAB 6: SETTINGS -->
+      <section id="tab-admin-settings" class="dash-panel">
+        <div class="dash-table-card" style="max-width: 700px;">
+          <h3 class="dash-table-title" style="margin-bottom: 24px;">Global Marketplace Platform Configuration</h3>
+          <form onsubmit="event.preventDefault(); window.location.href='./404.html';">
+            <div class="form-input-box">
+              <label class="form-input-label">Marketplace Currency Standard</label>
+              <select class="form-control">
+                <option selected>Multi-Currency (USD, EUR, GBP, AED, CHF, JPY)</option>
+                <option>USD Standard</option>
+              </select>
+            </div>
+            <div class="form-input-box">
+              <label class="form-input-label">Automated Escrow KYC Threshold</label>
+              <input type="text" class="form-control" value="$10,000,000 USD (Tier 1 Enhanced Due Diligence)" />
+            </div>
+            <div class="form-input-box">
+              <label class="form-input-label">Quantum Encryption Certificate</label>
+              <input type="text" class="form-control" value="STACKLY-GLOBAL-SSL-2026-ACTIVE" readonly />
+            </div>
+            <button type="submit" class="btn btn-gold" style="margin-top: 10px;">Save Configuration</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ADD PROPERTY MODAL (CRUD) -->
+  <div class="modal-overlay" id="addPropertyModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="document.getElementById('addPropertyModal').classList.remove('open')">&times;</button>
+      <span class="section-tag">Inventory Desk</span>
+      <h2 class="section-title" style="font-size: 1.6rem; margin-bottom: 18px;">Publish New Trophy Listing</h2>
+      <form id="addPropertyForm" novalidate>
+        <div class="form-input-box">
+          <label class="form-input-label">Estate Title</label>
+          <input type="text" id="propNewTitle" class="form-control" placeholder="e.g. The Crown Horizon Estate" required />
+          <span class="form-error-msg" id="propNewTitleError"></span>
+        </div>
+        <div class="form-input-box">
+          <label class="form-input-label">City / Destination</label>
+          <input type="text" id="propNewCity" class="form-control" placeholder="e.g. Geneva, Switzerland" required />
+          <span class="form-error-msg" id="propNewCityError"></span>
+        </div>
+        <div class="form-input-box">
+          <label class="form-input-label">Asking Price / Valuation</label>
+          <input type="text" id="propNewPrice" class="form-control" placeholder="e.g. $38,000,000" required />
+          <span class="form-error-msg" id="propNewPriceError"></span>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+          <button type="button" class="btn btn-outline-gold btn-sm" onclick="document.getElementById('addPropertyModal').classList.remove('open')">Cancel</button>
+          <button type="submit" class="btn btn-gold btn-sm">Add to Global Inventory</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/property-data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

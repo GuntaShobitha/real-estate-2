@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal | STACKLY Private Client Suite</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- ==========================================================================
+         LEFT SIDEBAR NAVBAR
+         ========================================================================== -->
+    <aside class="dash-sidebar">
+      <div class="dash-sidebar-header">
+        <a href="javascript:void(0)" class="nav-logo" onclick="document.querySelector('[data-tab=\'tab-user-overview\']').click();">
+          <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="nav-logo-fallback" style="display: none;">
+            <div class="logo-crest">S</div>
+            <div class="logo-text">STACK<span>LY</span></div>
+          </div>
+        </a>
+      </div>
+
+      <!-- User Profile Card -->
+      <div class="dash-user-profile">
+        <div class="dash-avatar-placeholder">
+          <span class="material-symbols-outlined" style="font-size: 1.6rem;">person</span>
+        </div>
+        <div class="dash-user-info">
+          <div class="dash-user-name dynamic-user-name">Lord Harrison Sterling</div>
+          <span class="dash-role-badge role-user-badge">Private Client</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="dash-nav">
+        <div class="dash-nav-item active" data-tab="tab-user-overview">
+          <span class="material-symbols-outlined">dashboard</span>
+          Overview
+        </div>
+        <div class="dash-nav-item" data-tab="tab-user-favorites">
+          <span class="material-symbols-outlined">favorite</span>
+          Saved Properties
+        </div>
+        <div class="dash-nav-item" data-tab="tab-user-tours">
+          <span class="material-symbols-outlined">calendar_month</span>
+          Scheduled Showings
+        </div>
+        <div class="dash-nav-item" data-tab="tab-user-mortgage">
+          <span class="material-symbols-outlined">account_balance_wallet</span>
+          Loan Center
+        </div>
+        <div class="dash-nav-item" data-tab="tab-user-vault">
+          <span class="material-symbols-outlined">folder_shared</span>
+          Document Vault
+        </div>
+        <div class="dash-nav-item" data-tab="tab-user-settings">
+          <span class="material-symbols-outlined">settings</span>
+          Settings
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer with Settings and Logout -->
+      <div class="dash-sidebar-footer">
+        <a href="#settings" class="btn-sidebar-action" onclick="document.querySelector('[data-tab=\'tab-user-settings\']').click();">
+          <span class="material-symbols-outlined">tune</span>
+          Account Settings
+        </a>
+        <button class="btn-sidebar-action btn-sidebar-logout" onclick="logoutUser()">
+          <span class="material-symbols-outlined">logout</span>
+          Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         MAIN CONTENT AREA
+         ========================================================================== -->
+    <main class="dash-main">
+      <div class="dash-topbar">
+        <div>
+          <button class="mobile-dash-toggle" aria-label="Toggle Sidebar">
+            <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 1.2rem;">menu</span> Menu
+          </button>
+          <h1 class="dash-greeting-title">Welcome, <span class="gold-gradient-text dynamic-user-name">Lord Sterling</span></h1>
+          <p class="dash-greeting-sub">Private Client Fiduciary Portfolio • Geneva & London Custody</p>
+        </div>
+        <div class="dash-topbar-actions">
+          <a href="./404.html" class="btn btn-outline-gold btn-sm">Public Portal</a>
+          <a href="./404.html" class="btn btn-gold btn-sm">VIP Hotline</a>
+        </div>
+      </div>
+
+      <!-- TAB 1: USER OVERVIEW -->
+      <section id="tab-user-overview" class="dash-panel active">
+        <div class="dash-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Saved Trophy Assets</div>
+            <div class="kpi-val">3</div>
+            <div class="kpi-trend trend-up">↑ 1 New Off-Market Listing</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Confirmed Showings</div>
+            <div class="kpi-val">2</div>
+            <div class="kpi-trend trend-up">Aviation transfer ready</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Pre-Approved Jumbo Facility</div>
+            <div class="kpi-val">$35M</div>
+            <div class="kpi-trend trend-up">Swiss Private Banking</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Active Escrow Mandates</div>
+            <div class="kpi-val">1</div>
+            <div class="kpi-trend trend-up">Mayfair Residence (£26M)</div>
+          </div>
+        </div>
+
+        <div class="dash-table-card">
+          <div class="dash-table-header">
+            <h3 class="dash-table-title">Recent Escrow & Showing Activities</h3>
+            <button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">Download Ledger</button>
+          </div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Property / Reference</th>
+                  <th>Metro Hub</th>
+                  <th>Action Type</th>
+                  <th>Date & Time</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>The Sky Crest Penthouse</strong></td>
+                  <td>Manhattan, NY</td>
+                  <td>Virtual 3D Spatial Walkthrough</td>
+                  <td>Sept 01, 2026</td>
+                  <td><span class="status-pill status-active">Completed</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Villa Solaria Waterfront</strong></td>
+                  <td>Monaco & Riviera</td>
+                  <td>Helicopter Showing Scheduled</td>
+                  <td>Sept 08, 2026</td>
+                  <td><span class="status-pill status-pending">Awaiting Flight Clear</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Mayfair Regency Palace</strong></td>
+                  <td>London, UK</td>
+                  <td>Escrow Title Verification</td>
+                  <td>Aug 29, 2026</td>
+                  <td><span class="status-pill status-active">In Custody</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: SAVED PROPERTIES -->
+      <section id="tab-user-favorites" class="dash-panel">
+        <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+          <h2 class="dash-table-title" style="font-size: 1.6rem;">My Saved <span class="gold-gradient-text">Private Collection</span></h2>
+          <p style="color: var(--text-secondary); font-size: 0.92rem;">Monitored residences with real-time valuation updates and price alerts.</p>
+        </div>
+
+        <div class="property-grid">
+          <div class="property-card">
+            <div class="property-img-wrap">
+              <img src="./images/penthouse-sky.webp" alt="Sky Crest Penthouse" class="property-img" />
+              <span class="property-badge">Penthouse</span>
+              <div class="property-price-tag">$28,500,000</div>
+            </div>
+            <div class="property-info">
+              <h3 class="property-title">The Sky Crest Penthouse</h3>
+              <p class="property-location">Billionaires' Row, Manhattan, NY</p>
+              <div class="property-specs">
+                <div class="spec-item"><span>5</span> Beds</div>
+                <div class="spec-item"><span>6.5</span> Baths</div>
+                <div class="spec-item"><span>8,450</span> sq ft</div>
+              </div>
+              <div class="property-footer" style="padding-top: 10px;">
+                <button class="btn btn-gold btn-sm" onclick="window.location.href='./404.html'">Book Showing</button>
+                <button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">Remove</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="property-img-wrap">
+              <img src="./images/coastal-villa.webp" alt="Villa Solaria" class="property-img" />
+              <span class="property-badge">Waterfront</span>
+              <div class="property-price-tag">€34,000,000</div>
+            </div>
+            <div class="property-info">
+              <h3 class="property-title">Villa Solaria Waterfront</h3>
+              <p class="property-location">Cap d'Antibes, French Riviera</p>
+              <div class="property-specs">
+                <div class="spec-item"><span>7</span> Beds</div>
+                <div class="spec-item"><span>9</span> Baths</div>
+                <div class="spec-item"><span>12,200</span> sq ft</div>
+              </div>
+              <div class="property-footer" style="padding-top: 10px;">
+                <button class="btn btn-gold btn-sm" onclick="window.location.href='./404.html'">Book Showing</button>
+                <button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: SCHEDULED TOURS -->
+      <section id="tab-user-tours" class="dash-panel">
+        <div class="dash-table-card">
+          <div class="dash-table-header">
+            <h3 class="dash-table-title">Upcoming VIP In-Person & Aviation Showings</h3>
+            <a href="./404.html" class="btn btn-gold btn-sm">+ Request New Showing</a>
+          </div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Residence</th>
+                  <th>Showing Type</th>
+                  <th>Assigned Director</th>
+                  <th>Scheduled Date</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Villa Solaria Waterfront</strong></td>
+                  <td>Helicopter + Yacht Tender</td>
+                  <td>Alexander Vance</td>
+                  <td>Sept 08, 2026 • 11:00 AM</td>
+                  <td><span class="status-pill status-pending">Confirmed Flight</span></td>
+                  <td>
+                    <button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">Cancel</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>The Bel-Air Glass Pavilion</strong></td>
+                  <td>Chauffeur Maybach Arrival</td>
+                  <td>Victoria Sterling</td>
+                  <td>Sept 14, 2026 • 03:30 PM</td>
+                  <td><span class="status-pill status-active">Approved</span></td>
+                  <td>
+                    <button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">Cancel</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: MORTGAGE & FINANCING CENTER -->
+      <section id="tab-user-mortgage" class="dash-panel">
+        <div class="dash-table-card">
+          <h3 class="dash-table-title" style="margin-bottom: 20px;">Pre-Approved Private Banking Facilities</h3>
+          <div class="grid-3col" style="margin-bottom: 30px;">
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--gold-border); padding: 24px; border-radius: var(--radius-md);">
+              <span style="font-size: 0.78rem; color: var(--gold-light); text-transform: uppercase;">Swiss Syndicate Bank</span>
+              <h4 style="font-family: var(--font-serif); font-size: 1.6rem; color: #fff; margin: 8px 0;">$35,000,000</h4>
+              <p style="color: var(--text-secondary); font-size: 0.85rem;">Rate: 4.85% • Interest-Only 10-Yr Option</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 24px; border-radius: var(--radius-md);">
+              <span style="font-size: 0.78rem; color: var(--gold-light); text-transform: uppercase;">London Mayfair Trust</span>
+              <h4 style="font-family: var(--font-serif); font-size: 1.6rem; color: #fff; margin: 8px 0;">£20,000,000</h4>
+              <p style="color: var(--text-secondary); font-size: 0.85rem;">Rate: 5.15% • Asset Cross-Collateralized</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 24px; border-radius: var(--radius-md);">
+              <span style="font-size: 0.78rem; color: var(--gold-light); text-transform: uppercase;">DIFC Sovereign Capital</span>
+              <h4 style="font-family: var(--font-serif); font-size: 1.6rem; color: #fff; margin: 8px 0;">AED 90,000,000</h4>
+              <p style="color: var(--text-secondary); font-size: 0.85rem;">Rate: 4.90% • Non-Resident Fast Track</p>
+            </div>
+          </div>
+          <a href="./404.html" class="btn btn-gold">Request Term Sheet Drawdown</a>
+        </div>
+      </section>
+
+      <!-- TAB 5: DOCUMENT VAULT -->
+      <section id="tab-user-vault" class="dash-panel">
+        <div class="dash-table-card">
+          <div class="dash-table-header">
+            <h3 class="dash-table-title">Encrypted Document & Title Vault</h3>
+            <button class="btn btn-gold btn-sm" onclick="window.location.href='./404.html'">Upload Signed NDA</button>
+          </div>
+          <div class="dash-table-wrap">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Document Name</th>
+                  <th>Associated Asset</th>
+                  <th>Encryption Level</th>
+                  <th>Date Stamped</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Master Private Client NDA.pdf</strong></td>
+                  <td>Global Portfolio</td>
+                  <td>AES-256 Quantum Shield</td>
+                  <td>Aug 12, 2026</td>
+                  <td><button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">View</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Escrow Escrow Deposit Receipt.pdf</strong></td>
+                  <td>Mayfair Residence</td>
+                  <td>Swiss Vault Signature</td>
+                  <td>Aug 29, 2026</td>
+                  <td><button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">View</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Biometric Helicopter Clearance.pdf</strong></td>
+                  <td>Monaco & Côte d'Azur</td>
+                  <td>Aviation Civil Registry</td>
+                  <td>Sept 01, 2026</td>
+                  <td><button class="btn btn-outline-gold btn-sm" onclick="window.location.href='./404.html'">View</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 6: SETTINGS -->
+      <section id="tab-user-settings" class="dash-panel">
+        <div class="dash-table-card" style="max-width: 700px;">
+          <h3 class="dash-table-title" style="margin-bottom: 24px;">Security & Notification Preferences</h3>
+          <form onsubmit="event.preventDefault(); window.location.href='./404.html';">
+            <div class="form-input-box">
+              <label class="form-input-label">Legal Principal Name</label>
+              <input type="text" class="form-control" value="Lord Harrison Sterling" />
+            </div>
+            <div class="form-input-box">
+              <label class="form-input-label">Encrypted Notification Email</label>
+              <input type="email" class="form-control" value="investor@stackly.com" />
+            </div>
+            <div class="form-input-box">
+              <label class="form-input-label">Two-Factor Biometric Authentication</label>
+              <select class="form-control">
+                <option selected>Enabled (Hardware Security Key / Mobile Prompt)</option>
+                <option>SMS Encrypted One-Time Pin</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-gold" style="margin-top: 10px;">Save Changes</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/property-data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

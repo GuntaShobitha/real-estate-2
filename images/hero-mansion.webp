@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <defs>
+    <linearGradient id="heroG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050608"/>
+      <stop offset="50%" stop-color="#121110"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#heroG)"/>
+  <polygon points="100,500 700,320 1300,500 1200,850 200,850" fill="#0d0e12" stroke="#BEA389" stroke-width="2"/>
+  <line x1="50" y1="320" x2="1350" y2="320" stroke="#E0D2C5" stroke-width="4"/>
+  <rect x="250" y="380" width="900" height="240" fill="rgba(224, 210, 197, 0.25)" stroke="#BEA389" stroke-width="1.5"/>
+  <ellipse cx="700" cy="740" rx="450" ry="80" fill="rgba(190, 163, 137, 0.3)" stroke="#FFF" stroke-width="1.5"/>
+  <text x="700" y="160" font-family="'Cinzel', serif" font-size="28" font-weight="bold" fill="#BEA389" text-anchor="middle" letter-spacing="6">STACKLY FLAGSHIP PRIVATE ESTATE</text>
+</svg>

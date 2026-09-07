@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Stackly | Heritage of Architectural Prestige & Global Fiduciary Representation</title>
+  <meta name="description" content="Discover the philosophy, executive board, and global milestones behind Stackly's sovereign real estate brokerage.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="nav-logo-fallback" style="display: none;">
+          <div class="logo-crest">S</div>
+          <div class="logo-text">STACK<span>LY</span></div>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Insights</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn-nav-login">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          Client Login
+        </a>
+      </div>
+
+      <button class="nav-hamburger" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="mobile-drawer-logo">
+        <img src="./images/logo-dark.webp" alt="STACKLY" class="mobile-drawer-logo-img" />
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close menu">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link active">About</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="blog.html" class="mobile-nav-link">Insights</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn-mobile-login">Client & Admin Login</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: ABOUT HERO & MANIFESTO -->
+    <section class="section" style="padding-top: calc(var(--header-height) + 40px);">
+      <div class="container">
+        <div class="grid-2col">
+          <div class="reveal-left">
+            <span class="section-tag">Our Heritage & Manifesto</span>
+            <h1 class="section-title">Redefining the Geometry of <span class="gold-gradient-text">Ultra-Luxury Living</span></h1>
+            <p class="section-description" style="margin-bottom: 24px;">
+              Founded with the singular conviction that exceptional architecture is a tangible manifestation of human achievement, Stackly operates as the private fiduciary gateway to the world's most rarefied real estate assets.
+            </p>
+            <p style="color: var(--text-secondary); margin-bottom: 32px; line-height: 1.7;">
+              We serve sovereign royalty, family offices, technology founders, and visionary developers across Geneva, London, New York, Monaco, and Dubai.
+            </p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="contact.html" class="btn btn-gold">Private Consultation</a>
+              <a href="services.html" class="btn btn-outline-gold">Our Advisory Services</a>
+            </div>
+          </div>
+          
+          <!-- MULTI-IMAGE HOVER GALLERY (4 Unique Relative Heritage Images) -->
+          <div class="reveal-right">
+            <div class="hover-gallery-wrap" id="heritageGallery" data-gallery="heritage">
+              <div class="hover-gallery-inner">
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80&fm=webp" alt="Mayfair Georgian Heritage" class="gallery-img active" data-title="Mayfair Georgian Heritage Estate" data-index="0" />
+                <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80&fm=webp" alt="Historic European Grand Palace" class="gallery-img" data-title="Historic European Grand Palace" data-index="1" />
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80&fm=webp" alt="Manhattan Private Landmark" class="gallery-img" data-title="Manhattan Private Landmark" data-index="2" />
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80&fm=webp" alt="French Riviera Royal Château" class="gallery-img" data-title="French Riviera Royal Château" data-index="3" />
+              </div>
+              <div class="gallery-badge" id="heritageBadge">Mayfair Georgian Heritage Estate</div>
+              <div class="gallery-indicators">
+                <span class="gallery-dot active" data-index="0" title="Mayfair Estate"></span>
+                <span class="gallery-dot" data-index="1" title="European Palace"></span>
+                <span class="gallery-dot" data-index="2" title="Manhattan Landmark"></span>
+                <span class="gallery-dot" data-index="3" title="Riviera Château"></span>
+              </div>
+              <div class="gallery-hint">
+                <span class="material-symbols-outlined" style="font-size: 1rem;">touch_app</span> Hover to cycle heritage estates
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: HERITAGE & 10-YEAR MILESTONES TIMELINE -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-header reveal-top">
+          <span class="section-tag">A Decade of Excellence</span>
+          <h2 class="section-title">The <span class="gold-gradient-text">Stackly Timeline</span></h2>
+          <p class="section-description">A decade of transformative real estate milestones and global records.</p>
+        </div>
+
+        <div class="grid-4col">
+          <div class="stat-card timeline-card reveal-left delay-100">
+            <span style="font-family: var(--font-serif); font-size: 2rem; font-weight: 800; color: var(--gold-light);">2016</span>
+            <h4 style="margin: 12px 0 8px 0; font-family: var(--font-serif); color: #FFFFFF;">Founding in Mayfair</h4>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Established as a bespoke off-market private brokerage representing top European family dynasties.</p>
+          </div>
+          <div class="stat-card timeline-card reveal-left delay-200">
+            <span style="font-family: var(--font-serif); font-size: 2rem; font-weight: 800; color: var(--gold-light);">2019</span>
+            <h4 style="margin: 12px 0 8px 0; font-family: var(--font-serif); color: #FFFFFF;">Manhattan & Monaco</h4>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Opened flagship private client offices on Madison Avenue, New York and Avenue d'Ostende, Monaco.</p>
+          </div>
+          <div class="stat-card timeline-card reveal-right delay-300">
+            <span style="font-family: var(--font-serif); font-size: 2rem; font-weight: 800; color: var(--gold-light);">2022</span>
+            <h4 style="margin: 12px 0 8px 0; font-family: var(--font-serif); color: #FFFFFF;">$3B Volume Milestone</h4>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Surpassed \$3 Billion in closed escrow volume and launched the proprietary 3D Spatial Virtual Viewing engine.</p>
+          </div>
+          <div class="stat-card timeline-card reveal-right delay-400">
+            <span style="font-family: var(--font-serif); font-size: 2rem; font-weight: 800; color: var(--gold-light);">2026</span>
+            <h4 style="margin: 12px 0 8px 0; font-family: var(--font-serif); color: #FFFFFF;">Global Sovereign Network</h4>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Active operations across 28 financial hubs with \$4.8B+ transacted and 1,250+ premier estates under advisory.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: ARCHITECTURAL PHILOSOPHY & BIOPHILIC INNOVATION -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2col">
+          <!-- MULTI-IMAGE HOVER GALLERY (4 Unique Relative Biophilic Images) -->
+          <div class="reveal-left">
+            <div class="hover-gallery-wrap" id="biophilicGallery" data-gallery="biophilic">
+              <div class="hover-gallery-inner">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80&fm=webp" alt="Biophilic Glass Cantilever Villa" class="gallery-img active" data-title="Biophilic Glass Cantilever Villa" data-index="0" />
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80&fm=webp" alt="Solar Microgrid Alpine Sanctuary" class="gallery-img" data-title="Solar Microgrid Alpine Sanctuary" data-index="1" />
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80&fm=webp" alt="Zero-Carbon Oceanfront Modernist Villa" class="gallery-img" data-title="Zero-Carbon Oceanfront Villa" data-index="2" />
+                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80&fm=webp" alt="Living Wall Architectural Atrium" class="gallery-img" data-title="Living Wall Architectural Atrium" data-index="3" />
+              </div>
+              <div class="gallery-badge" id="biophilicBadge">Biophilic Glass Cantilever Villa</div>
+              <div class="gallery-indicators">
+                <span class="gallery-dot active" data-index="0" title="Glass Cantilever"></span>
+                <span class="gallery-dot" data-index="1" title="Solar Alpine"></span>
+                <span class="gallery-dot" data-index="2" title="Zero-Carbon Villa"></span>
+                <span class="gallery-dot" data-index="3" title="Living Wall"></span>
+              </div>
+              <div class="gallery-hint">
+                <span class="material-symbols-outlined" style="font-size: 1rem;">eco</span> Hover to cycle sustainable innovations
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-right">
+            <span class="section-tag">Sustainable & Biophilic Philosophy</span>
+            <h2 class="section-title">Where Nature Meets <span class="gold-gradient-text">Architectural Grandeur</span></h2>
+            <p class="section-description" style="margin-bottom: 20px;">
+              We believe true luxury in the modern century is measured by harmonious integration with the natural landscape, clean energy microgrids, and biophilic wellness design.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 16px; color: var(--text-secondary); font-size: 0.95rem;">
+              <li style="display: flex; align-items: center; gap: 12px; transition: transform 0.3s ease;">
+                <span class="material-symbols-outlined" style="color: #BEA389; font-size: 1.35rem;">check_circle</span> Carbon-neutral estate certifications and solar microgrid integration.
+              </li>
+              <li style="display: flex; align-items: center; gap: 12px; transition: transform 0.3s ease;">
+                <span class="material-symbols-outlined" style="color: #BEA389; font-size: 1.35rem;">check_circle</span> Museum-grade natural stone, handcrafted European timber, and seismic damping.
+              </li>
+              <li style="display: flex; align-items: center; gap: 12px; transition: transform 0.3s ease;">
+                <span class="material-symbols-outlined" style="color: #BEA389; font-size: 1.35rem;">check_circle</span> Advanced biophilic climate, circadian lighting, and multi-stage air purification.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: EXECUTIVE LEADERSHIP & BOARD -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-header reveal-top">
+          <span class="section-tag">Leadership & Governance</span>
+          <h2 class="section-title">Executive <span class="gold-gradient-text">Board of Directors</span></h2>
+          <p class="section-description">Guiding Stackly's strategic global acquisitions, legal compliance, and private wealth partnerships.</p>
+        </div>
+
+        <div class="agent-grid">
+          <div class="agent-card reveal-left delay-100">
+            <div class="agent-img-wrap"><img src="./images/agent-1.webp" alt="Victoria Sterling" class="agent-img" /></div>
+            <div class="agent-info">
+              <h3 class="agent-name">Victoria Sterling</h3>
+              <p class="agent-role">Chief Executive Officer & Founder</p>
+              <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 8px;">Former Private Banking Managing Director, Wall Street & London</p>
+              <div class="agent-socials">
+                <a href="404.html" class="agent-social-btn" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg></a>
+                <a href="404.html" class="agent-social-btn" title="X"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+</svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="agent-card reveal-left delay-200">
+            <div class="agent-img-wrap"><img src="./images/agent-2.webp" alt="Alexander Vance" class="agent-img" /></div>
+            <div class="agent-info">
+              <h3 class="agent-name">Alexander Vance</h3>
+              <p class="agent-role">Chief Investment Officer</p>
+              <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 8px;">Architectural Historian & European Private Equity Lead</p>
+              <div class="agent-socials">
+                <a href="404.html" class="agent-social-btn" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg></a>
+                <a href="404.html" class="agent-social-btn" title="X"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+</svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="agent-card reveal-right delay-300">
+            <div class="agent-img-wrap"><img src="./images/agent-3.webp" alt="Soraya Al-Mansoor" class="agent-img" /></div>
+            <div class="agent-info">
+              <h3 class="agent-name">Soraya Al-Mansoor</h3>
+              <p class="agent-role">Managing Director, MENA Region</p>
+              <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 8px;">Sovereign Fund Advisor & Prime Waterfront Specialist</p>
+              <div class="agent-socials">
+                <a href="404.html" class="agent-social-btn" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg></a>
+                <a href="404.html" class="agent-social-btn" title="X"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+</svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="agent-card reveal-right delay-400">
+            <div class="agent-img-wrap"><img src="./images/agent-4.webp" alt="Kenjiro Takahashi" class="agent-img" /></div>
+            <div class="agent-info">
+              <h3 class="agent-name">Kenjiro Takahashi</h3>
+              <p class="agent-role">Head of APAC Capital Markets</p>
+              <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 8px;">Cross-Border Escrow & Real Estate Securities Counsel</p>
+              <div class="agent-socials">
+                <a href="404.html" class="agent-social-btn" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg></a>
+                <a href="404.html" class="agent-social-btn" title="X"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+</svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: GLOBAL METRO NETWORK (SHOWROOM CARDS WITH BIG SIZE SUCCESS BOX PREVIEW ON HOVER) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal-top">
+          <span class="section-tag">Global Presence</span>
+          <h2 class="section-title">28 Global <span class="gold-gradient-text">Private Showrooms</span></h2>
+          <p class="section-description">Hover over any showroom card to inspect high-resolution architecture and private concierge access.</p>
+        </div>
+
+        <div class="grid-3col">
+          <!-- New York -->
+          <div class="showroom-card reveal-left delay-100" 
+               data-city="New York Flagship" 
+               data-img="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80&fm=webp"
+               data-address="767 Fifth Avenue, GM Building, Manhattan, NY 10153"
+               data-phone="+1 (212) 890-4400"
+               data-stat="Avg. $3,450 / sq ft • 24/7 Sovereign Concierge"
+               data-director="Victoria Sterling, Managing Partner">
+            <div>
+              <div class="showroom-card-header">
+                <span class="showroom-city-tag">New York</span>
+                <span class="showroom-view-badge"><span class="material-symbols-outlined" style="font-size: 1rem; color: #BEA389;">visibility</span> Hover View</span>
+              </div>
+              <h3 class="advantage-title" style="font-size: 1.25rem;">New York Flagship</h3>
+              <p class="advantage-desc">767 Fifth Avenue, GM Building, Manhattan, NY</p>
+            </div>
+            <p style="color: #BEA389; font-size: 0.85rem; margin-top: 14px; font-weight: 600;">Direct: +1 (212) 890-4400</p>
+          </div>
+
+          <!-- London -->
+          <div class="showroom-card reveal-bottom delay-200" 
+               data-city="London Mayfair HQ" 
+               data-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80&fm=webp"
+               data-address="14 Berkeley Square, Mayfair, London W1J 6BQ, UK"
+               data-phone="+44 20 7946 0991"
+               data-stat="Grade II Listed Asset Advisory • £26M+ Mandates"
+               data-director="Alexander Vance, Senior Partner">
+            <div>
+              <div class="showroom-card-header">
+                <span class="showroom-city-tag">London</span>
+                <span class="showroom-view-badge"><span class="material-symbols-outlined" style="font-size: 1rem; color: #BEA389;">visibility</span> Hover View</span>
+              </div>
+              <h3 class="advantage-title" style="font-size: 1.25rem;">London Mayfair HQ</h3>
+              <p class="advantage-desc">14 Berkeley Square, Mayfair, London W1J 6BQ</p>
+            </div>
+            <p style="color: #BEA389; font-size: 0.85rem; margin-top: 14px; font-weight: 600;">Direct: +44 20 7946 0991</p>
+          </div>
+
+          <!-- Dubai -->
+          <div class="showroom-card reveal-right delay-300" 
+               data-city="Dubai DIFC Pavilion" 
+               data-img="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80&fm=webp"
+               data-address="Gate Precinct Building 4, Level 7, DIFC, Dubai, UAE"
+               data-phone="+971 4 399 2200"
+               data-stat="Palm Jumeirah Waterfont • AED 95M+ Portfolios"
+               data-director="Soraya Al-Mansoor, Regional Head">
+            <div>
+              <div class="showroom-card-header">
+                <span class="showroom-city-tag">Dubai</span>
+                <span class="showroom-view-badge"><span class="material-symbols-outlined" style="font-size: 1rem; color: #BEA389;">visibility</span> Hover View</span>
+              </div>
+              <h3 class="advantage-title" style="font-size: 1.25rem;">Dubai DIFC Pavilion</h3>
+              <p class="advantage-desc">Gate Precinct Building 4, DIFC, Dubai, UAE</p>
+            </div>
+            <p style="color: #BEA389; font-size: 0.85rem; margin-top: 14px; font-weight: 600;">Direct: +971 4 399 2200</p>
+          </div>
+
+          <!-- Monaco -->
+          <div class="showroom-card reveal-left delay-400" 
+               data-city="Monaco Monte Carlo" 
+               data-img="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80&fm=webp"
+               data-address="27 Avenue Princesse Grace, 98000 Monaco"
+               data-phone="+377 98 98 00 12"
+               data-stat="Port Hercule Frontline • Superyacht Berthing Rights"
+               data-director="Alexander Vance, Managing Director">
+            <div>
+              <div class="showroom-card-header">
+                <span class="showroom-city-tag">Monaco</span>
+                <span class="showroom-view-badge"><span class="material-symbols-outlined" style="font-size: 1rem; color: #BEA389;">visibility</span> Hover View</span>
+              </div>
+              <h3 class="advantage-title" style="font-size: 1.25rem;">Monaco Monte Carlo</h3>
+              <p class="advantage-desc">27 Avenue Princesse Grace, 98000 Monaco</p>
+            </div>
+            <p style="color: #BEA389; font-size: 0.85rem; margin-top: 14px; font-weight: 600;">Direct: +377 98 98 00 12</p>
+          </div>
+
+          <!-- Geneva -->
+          <div class="showroom-card reveal-bottom delay-500" 
+               data-city="Geneva Private Office" 
+               data-img="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80&fm=webp"
+               data-address="Rue du Rhône 42, 1204 Genève, Switzerland"
+               data-phone="+41 22 819 3300"
+               data-stat="Swiss Alps Ski Chalets • Multi-Currency Escrow"
+               data-director="Hans-Peter Weber, Senior Fiduciary">
+            <div>
+              <div class="showroom-card-header">
+                <span class="showroom-city-tag">Geneva</span>
+                <span class="showroom-view-badge"><span class="material-symbols-outlined" style="font-size: 1rem; color: #BEA389;">visibility</span> Hover View</span>
+              </div>
+              <h3 class="advantage-title" style="font-size: 1.25rem;">Geneva Private Office</h3>
+              <p class="advantage-desc">Rue du Rhône 42, 1204 Genève, Switzerland</p>
+            </div>
+            <p style="color: #BEA389; font-size: 0.85rem; margin-top: 14px; font-weight: 600;">Direct: +41 22 819 3300</p>
+          </div>
+
+          <!-- Tokyo -->
+          <div class="showroom-card reveal-right delay-600" 
+               data-city="Tokyo Marunouchi" 
+               data-img="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=80&fm=webp"
+               data-address="Marunouchi Park Building, Chiyoda-ku, Tokyo, Japan"
+               data-phone="+81 3 5500 8820"
+               data-stat="Minato-ku Modern Penthouses • ¥3.8B+ Transactions"
+               data-director="Kenjiro Takahashi, APAC Lead">
+            <div>
+              <div class="showroom-card-header">
+                <span class="showroom-city-tag">Tokyo</span>
+                <span class="showroom-view-badge"><span class="material-symbols-outlined" style="font-size: 1rem; color: #BEA389;">visibility</span> Hover View</span>
+              </div>
+              <h3 class="advantage-title" style="font-size: 1.25rem;">Tokyo Marunouchi</h3>
+              <p class="advantage-desc">Marunouchi Park Building, Chiyoda-ku, Tokyo</p>
+            </div>
+            <p style="color: #BEA389; font-size: 0.85rem; margin-top: 14px; font-weight: 600;">Direct: +81 3 5500 8820</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG SIZE SHOWROOM SUCCESS BOX MODAL (Appears smoothly on card interaction/click) -->
+    <div class="showroom-modal-backdrop" id="showroomSuccessModal" onclick="closeShowroomModal(event)">
+      <div class="showroom-success-box" onclick="event.stopPropagation()">
+        <button class="modal-close-btn" onclick="closeShowroomModal()" title="Close">&times;</button>
+        <div class="showroom-box-img-wrap">
+          <img src="" alt="Showroom Architecture" class="showroom-box-img" id="modalShowroomImg" />
+          <div class="showroom-success-badge">
+            <span class="material-symbols-outlined check-icon">verified</span>
+            <span>STACKLY VERIFIED GLOBAL SHOWROOM</span>
+          </div>
+        </div>
+        <div class="showroom-box-body">
+          <h2 class="showroom-box-title" id="modalShowroomTitle">New York Flagship</h2>
+          <div class="showroom-box-addr">
+            <span class="material-symbols-outlined" style="font-size: 1.1rem;">location_on</span>
+            <span id="modalShowroomAddr">767 Fifth Avenue, GM Building, Manhattan, NY</span>
+          </div>
+          <div class="showroom-box-details">
+            <div class="showroom-detail-item">
+              <span class="showroom-detail-label">Direct Fiduciary Line</span>
+              <span class="showroom-detail-val" id="modalShowroomPhone">+1 (212) 890-4400</span>
+            </div>
+            <div class="showroom-detail-item">
+              <span class="showroom-detail-label">Market Intelligence</span>
+              <span class="showroom-detail-val" id="modalShowroomStat">Avg. $3,450 / sq ft</span>
+            </div>
+            <div class="showroom-detail-item">
+              <span class="showroom-detail-label">Managing Lead</span>
+              <span class="showroom-detail-val" id="modalShowroomDirector">Victoria Sterling</span>
+            </div>
+            <div class="showroom-detail-item">
+              <span class="showroom-detail-label">Security Protocol</span>
+              <span class="showroom-detail-val" style="color: #BEA389;">Encrypted Biometric Escrow</span>
+            </div>
+          </div>
+          <div class="showroom-box-footer">
+            <button class="btn btn-outline-gold btn-sm" onclick="closeShowroomModal()">Dismiss</button>
+            <a href="contact.html" class="btn btn-gold btn-sm" id="modalShowroomLink">Schedule Private Appointment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 6: CORE VALUES & CLIENT PLEDGES -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-header reveal-top">
+          <span class="section-tag">Ethos & Guarantees</span>
+          <h2 class="section-title">Our Fiduciary <span class="gold-gradient-text">Commitment</span></h2>
+          <p class="section-description">Three pillars governing every private interaction and escrow handling.</p>
+        </div>
+
+        <div class="advantage-grid">
+          <div class="advantage-card reveal-left delay-100">
+            <div class="advantage-icon-box">
+              <span class="material-symbols-outlined" style="font-size: 2rem;">security</span>
+            </div>
+            <h3 class="advantage-title">Absolute Discretion</h3>
+            <p class="advantage-desc">Encrypted communications, private nomineeshire, and non-disclosure guarantees protect our principals at all stages.</p>
+          </div>
+          <div class="advantage-card reveal-bottom delay-200">
+            <div class="advantage-icon-box">
+              <span class="material-symbols-outlined" style="font-size: 2rem;">gavel</span>
+            </div>
+            <h3 class="advantage-title">Fiduciary Independence</h3>
+            <p class="advantage-desc">We represent our clients with uncompromising loyalty, avoiding dual-agency conflicts in super-prime transactions.</p>
+          </div>
+          <div class="advantage-card reveal-right delay-300">
+            <div class="advantage-icon-box">
+              <span class="material-symbols-outlined" style="font-size: 2rem;">search_check</span>
+            </div>
+            <h3 class="advantage-title">Rigorous Due Diligence</h3>
+            <p class="advantage-desc">Every listing is audited for clean title certification, structural soundness, and long-term capital stability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: GLOBAL INDUSTRY AWARDS & ACCOLADES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal-top">
+          <span class="section-tag">Recognition</span>
+          <h2 class="section-title">Global Real Estate <span class="gold-gradient-text">Accolades</span></h2>
+          <p class="section-description">Honored by the world's most prestigious architectural and luxury real estate bodies.</p>
+        </div>
+
+        <div class="grid-3col">
+          <div class="stat-card reveal-left delay-100">
+            <div style="font-size: 2.2rem; color: #BEA389; margin-bottom: 8px;">
+              <span class="material-symbols-outlined" style="font-size: 2.8rem;">emoji_events</span>
+            </div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 6px; color: #FFFFFF;">International Property Awards</h4>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">Best Global Luxury Real Estate Agency 2024 & 2025</p>
+          </div>
+          <div class="stat-card reveal-bottom delay-200">
+            <div style="font-size: 2.2rem; color: #BEA389; margin-bottom: 8px;">
+              <span class="material-symbols-outlined" style="font-size: 2.8rem;">star</span>
+            </div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 6px; color: #FFFFFF;">Forbes Global Properties</h4>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">Excellence in Off-Market Brokerage & Escrow Security</p>
+          </div>
+          <div class="stat-card reveal-right delay-300">
+            <div style="font-size: 2.2rem; color: #BEA389; margin-bottom: 8px;">
+              <span class="material-symbols-outlined" style="font-size: 2.8rem;">museum</span>
+            </div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 6px; color: #FFFFFF;">Architectural Digest</h4>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">Premier Trophy Asset Curation & Biophilic Design Innovation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: INSTITUTIONAL PARTNERS & PRESS -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-header reveal-top">
+          <span class="section-tag">Media & Institutional Network</span>
+          <h2 class="section-title">Featured Across <span class="gold-gradient-text">Global Press</span></h2>
+          <p class="section-description">Our market commentary and record-breaking transactions routinely headline international financial media.</p>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-family: var(--font-serif); font-size: 1.15rem; letter-spacing: 2px;">
+          <span class="press-logo-item">BLOOMBERG WEALTH</span>
+          <span style="color: var(--gold-border);">•</span>
+          <span class="press-logo-item">FINANCIAL TIMES</span>
+          <span style="color: var(--gold-border);">•</span>
+          <span class="press-logo-item">ROBB REPORT</span>
+          <span style="color: var(--gold-border);">•</span>
+          <span class="press-logo-item">WALL STREET JOURNAL</span>
+          <span style="color: var(--gold-border);">•</span>
+          <span class="press-logo-item">MANSION GLOBAL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: VIP CAREER & PARTNERSHIP CTA -->
+    <section class="section">
+      <div class="container">
+        <div style="background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: var(--radius-xl); padding: 50px; text-align: center; transition: all 0.4s ease; box-shadow: var(--shadow-luxury);" class="reveal-scale">
+          <h2 class="section-title" style="margin-bottom: 14px;">Join the <span class="gold-gradient-text">Elite Broker Network</span></h2>
+          <p class="section-description" style="max-width: 600px; margin: 0 auto 30px auto;">
+            Stackly is continually seeking seasoned luxury advisors, private bankers, and architectural curators with established HNW networks.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 16px;">
+            <a href="contact.html?subject=career" class="btn btn-gold filter-btn">Inquire About Partnership</a>
+            <a href="contact.html" class="btn btn-outline-gold">Contact Headquarters</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="nav-logo">
+            <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="nav-logo-fallback" style="display: none;">
+              <div class="logo-crest">S</div>
+              <div class="logo-text">STACK<span>LY</span></div>
+            </div>
+          </a>
+          <p>Global leader in ultra-prime residential brokerage, off-market acquisitions, and family office real estate asset management.</p>
+          <div class="footer-social-links">
+            <a href="404.html" class="footer-social-icon" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+</svg></a>
+            <a href="404.html" class="footer-social-icon" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg></a>
+            <a href="404.html" class="footer-social-icon" title="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+</svg></a>
+            <a href="404.html" class="footer-social-icon" title="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+</svg></a>
+          </div>
+        </div>
+
+        
+
+        <div>
+          <h4 class="footer-heading">Corporate</h4>
+          <div class="footer-links">
+             <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="services.html" class="footer-link">Services</a>
+            <a href="blog.html" class="footer-link">Insights</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Prime Portfolios</h4>
+          <div class="footer-links">
+            <a href="404.html" class="footer-link">Billionaires' Row Penthouses</a>
+            <a href="404.html" class="footer-link">French Riviera Waterfront</a>
+            <a href="404.html" class="footer-link">Palm Jumeirah Signature Villas</a>
+            <a href="404.html" class="footer-link">Bel-Air Glass Pavilions</a>
+            <a href="404.html" class="footer-link">Aspen Mountain Chalets</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Private Newsletter</h4>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault();">
+            <div class="newsletter-input-wrap">
+              <input type="email" class="newsletter-input" placeholder="Enter private email..." id="footerEmailAbout" />
+              <button type="submit" class="btn btn-gold btn-sm">Join</button>
+            </div>
+            <div class="form-error-msg" id="footerEmailAboutError"></div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Strictly confidential. No third-party syndication.</span>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 STACKLY International Realty Ltd. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Governance</a>
+          <a href="404.html">Anti-Money Laundering (AML)</a>
+          <a href="404.html">Terms of Escrow</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/property-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

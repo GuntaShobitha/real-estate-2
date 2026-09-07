@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Authentication | STACKLY Private Client & Admin</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, rgba(7, 9, 14, 1) 80%);">
+
+  <!-- TOP HEADER WITH LOGO & BACK TO HOME BUTTON -->
+  <header style="padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <!-- Logo requested on left -->
+      <a href="index.html" class="nav-logo">
+        <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="nav-logo-fallback" style="display: none;">
+          <div class="logo-crest">S</div>
+          <div class="logo-text">STACK<span>LY</span></div>
+        </div>
+      </a>
+
+      <!-- Back to Home Button -->
+      <a href="index.html" class="btn btn-outline-gold btn-sm">
+        <span class="material-symbols-outlined" style="font-size: 1.1rem; margin-right: 4px;">arrow_back</span>
+        Back to Home
+      </a>
+    </div>
+  </header>
+
+  <!-- AUTH FORM CONTAINER -->
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 24px;">
+    <div style="width: 100%; max-width: 480px; background: rgba(13,17,26,0.9); border: 1px solid var(--gold-border); border-radius: var(--radius-xl); padding: 40px 36px; box-shadow: var(--shadow-luxury); backdrop-filter: blur(20px);">
+      
+      <div class="text-center" style="margin-bottom: 28px;">
+        <span class="section-tag" style="margin-bottom: 12px;">Secure Access</span>
+        <h1 style="font-family: var(--font-serif); font-size: 25px; font-weight: 700; margin-bottom: 8px;">Portal Authentication</h1>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">Select your role to access your bespoke dashboard.</p>
+      </div>
+
+      <form id="stacklyLoginForm">
+        <!-- 1ST FIELD: ROLE SELECTOR WITH 2 OPTIONS (USER & ADMIN) -->
+        <div class="form-input-box" style="margin-bottom: 22px;">
+          <label class="form-input-label">1. Access Role</label>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px;">
+            <button type="button" class="role-select-btn active" data-role="user">
+              <span class="material-symbols-outlined" style="font-size: 1.2rem;">person</span> Private User
+            </button>
+            <button type="button" class="role-select-btn" data-role="admin">
+              <span class="material-symbols-outlined" style="font-size: 1.2rem;">admin_panel_settings</span> Admin
+            </button>
+          </div>
+          <input type="hidden" id="selectedRole" value="user" />
+        </div>
+
+        <!-- 2ND FIELD: EMAIL -->
+        <div class="form-input-box">
+          <label class="form-input-label">2. Email Address</label>
+          <input type="email" id="loginEmail" class="form-control" placeholder="client@privateoffice.com" value="investor@stackly.com" />
+          <div class="form-error-msg" id="loginEmailError"></div>
+        </div>
+
+        <!-- 3RD FIELD: PASSWORD -->
+        <div class="form-input-box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <label class="form-input-label">3. Master Password</label>
+            <!-- Forgot password option: MUST REDIRECT TO 404.HTML -->
+            <a href="404.html" style="font-size: 0.78rem; color: var(--gold-light); text-decoration: underline;">Forgot Password?</a>
+          </div>
+          <input type="password" id="loginPassword" class="form-control" placeholder="••••••••••••" value="StacklySecure2026!" />
+          <div class="form-error-msg" id="loginPasswordError"></div>
+        </div>
+
+        <!-- LOGIN BUTTON -->
+        <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 14px; margin-bottom: 20px; font-weight: 700; letter-spacing: 1.5px;">
+          Authenticate & Enter
+        </button>
+
+        <!-- REGISTER BUTTON / LINK -->
+        <div class="text-center" style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+          <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 12px;">Do not have a private mandate account?</p>
+          <a href="register.html" class="btn btn-outline-gold btn-sm" style="width: 100%;">Create New Client Account</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer style="padding: 20px 0; text-align: center; color: var(--text-muted); font-size: 0.82rem; border-top: 1px solid rgba(255,255,255,0.06);">
+    &copy; 2026 STACKLY International Realty Ltd. Encrypted 256-bit SSL Session.
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

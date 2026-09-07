@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" width="280" height="60">
+  <defs>
+    <linearGradient id="crestGL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#BEA389"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(10, 8)">
+    <polygon points="22,2 42,13 42,35 22,46 2,35 2,13" fill="none" stroke="url(#crestGL)" stroke-width="2.5"/>
+    <text x="22" y="31" font-family="'Cinzel', serif" font-size="20" font-weight="bold" fill="#BEA389" text-anchor="middle">S</text>
+  </g>
+  <text x="64" y="32" font-family="'Cinzel', serif" font-size="24" font-weight="800" fill="#FFFFFF" letter-spacing="4">STACK<tspan fill="#BEA389">LY</tspan></text>
+  <text x="65" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="600" fill="#E0D2C5" letter-spacing="3.5">PRIVATE CLIENT SUITE</text>
+</svg>

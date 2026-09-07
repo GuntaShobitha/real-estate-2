@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Stackly Bespoke Real Estate & Private Wealth Advisory</title>
+  <meta name="description" content="Comprehensive private client real estate services including buyer representation, off-market sales, escrow legal concierge, and portfolio syndication.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="nav-logo-fallback" style="display: none;">
+          <div class="logo-crest">S</div>
+          <div class="logo-text">STACK<span>LY</span></div>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="blog.html" class="nav-link">Insights</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn-nav-login">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          Client Login
+        </a>
+      </div>
+
+      <button class="nav-hamburger" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="mobile-drawer-logo">
+        <img src="./images/logo-dark.webp" alt="STACKLY" class="mobile-drawer-logo-img" />
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close menu">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="services.html" class="mobile-nav-link active">Services</a>
+      <a href="blog.html" class="mobile-nav-link">Insights</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn-mobile-login">Client & Admin Login</a>
+    </div>
+  </div>
+
+  <!-- Snap Progress Bar -->
+  <div class="snap-progress-bar" id="snapProgressBar"></div>
+
+  <!-- Snap Navigation Dots -->
+  <div class="snap-nav-dots" id="snapNavDots">
+    <span class="snap-nav-dot active" data-index="0"><span class="dot-label">Overview</span></span>
+    <span class="snap-nav-dot" data-index="1"><span class="dot-label">Buyer Concierge</span></span>
+    <span class="snap-nav-dot" data-index="2"><span class="dot-label">Seller Representation</span></span>
+    <span class="snap-nav-dot" data-index="3"><span class="dot-label">Family Office</span></span>
+    <span class="snap-nav-dot" data-index="4"><span class="dot-label">Commercial Capital</span></span>
+    <span class="snap-nav-dot" data-index="5"><span class="dot-label">Interior Staging</span></span>
+    <span class="snap-nav-dot" data-index="6"><span class="dot-label">Legal & Escrow</span></span>
+    <span class="snap-nav-dot" data-index="7"><span class="dot-label">Relocation</span></span>
+    <span class="snap-nav-dot" data-index="8"><span class="dot-label">Advisory Session</span></span>
+  </div>
+
+  <div class="services-snap-container" id="servicesSnapContainer">
+  <main>
+    <!-- SECTION 1: SERVICES HERO & MATRIX -->
+    <section class="section services-snap-section" style="padding-top: calc(var(--header-height) + 40px);">
+      <div class="snap-section-line"></div>
+      <span class="snap-section-number">01</span>
+      <div class="container text-center" style="max-width: 860px; margin: 0 auto;">
+        <div class="snap-content">
+          <span class="section-tag">Bespoke Client Capabilities</span>
+          <h1 class="section-title">Institutional Real Estate & <span class="gold-gradient-text">Private Wealth Advisory</span></h1>
+          <p class="section-description">
+            A seamless suite of super-prime acquisition, cinematic listing distribution, multi-jurisdiction escrow, and architectural asset management services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: BUYER ACQUISITION & CONCIERGE -->
+    <section class="section section-dark services-snap-section">
+      <div class="snap-section-line"></div>
+      <span class="snap-section-number">02</span>
+      <div class="container">
+        <div class="grid-2col">
+          <div class="snap-img-col">
+            <img src="./images/service-buying.webp" alt="Buyer Representation" style="border-radius: var(--radius-xl); border: 1px solid var(--gold-border);" />
+          </div>
+          <div class="snap-content">
+            <span class="section-tag">Buyer Concierge</span>
+            <h2 class="section-title">Off-Market Sourcing & <span class="gold-gradient-text">Trophy Asset Acquisition</span></h2>
+            <p class="section-description" style="margin-bottom: 20px;">
+              Access private properties before they reach public records. We represent buyers exclusively, evaluating zoning, historical appreciation, structural integrity, and price negotiation leverage.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 28px;">
+              <li>• Discreet off-market property scouting across 28 financial hubs.</li>
+              <li>• Comprehensive appraisal, structural inspection, and title verification.</li>
+              <li>• Direct confidential negotiation with sovereign and private estate owners.</li>
+            </ul>
+            <a href="contact.html?service=buying" class="btn btn-gold btn-sm">Retain Acquisition Counsel</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: SELLER REPRESENTATION & CINEMATIC STAGING -->
+    <section class="section services-snap-section">
+      <div class="snap-section-line"></div>
+      <span class="snap-section-number">03</span>
+      <div class="container">
+        <div class="grid-2col">
+          <div class="snap-content">
+            <span class="section-tag">Seller Representation</span>
+            <h2 class="section-title">Cinematic Staging & <span class="gold-gradient-text">Global Targeted Marketing</span></h2>
+            <p class="section-description" style="margin-bottom: 20px;">
+              We position iconic residences as sovereign works of art. Utilizing 8K drone cinematography, 3D interactive spatial mapping, and targeted family office outreach.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 28px;">
+              <li>• Custom architectural editorial production and private monograph books.</li>
+              <li>• Direct syndication to verified ultra-high-net-worth buyer networks.</li>
+              <li>• Private biometric showings with stringent security protocols.</li>
+            </ul>
+            <a href="contact.html?service=selling" class="btn btn-gold btn-sm">List an Estate Privately</a>
+          </div>
+          <div class="snap-img-col">
+            <img src="./images/service-selling.webp" alt="Cinematic Staging" style="border-radius: var(--radius-xl); border: 1px solid var(--gold-border);" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: FAMILY OFFICE & PRIVATE WEALTH ADVISORY -->
+    <section class="section section-dark services-snap-section">
+      <div class="snap-section-line"></div>
+      <span class="snap-section-number">04</span>
+      <div class="container">
+        <div class="grid-2col">
+          <div class="snap-img-col">
+            <img src="./images/service-mgmt.webp" alt="Family Office Asset Management" style="border-radius: var(--radius-xl); border: 1px solid var(--gold-border);" />
+          </div>
+          <div class="snap-content">
+            <span class="section-tag">Family Office Desk</span>
+            <h2 class="section-title">Portfolio Allocation & <span class="gold-gradient-text">Generational Preservation</span></h2>
+            <p class="section-description" style="margin-bottom: 20px;">
+              Strategic asset diversification across stable currencies, inflation-hedging trophy residential assets, and yield-bearing prime commercial flagships.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 28px;">
+              <li>• Cross-border asset-backed financing and private debt syndication.</li>
+              <li>• Real estate estate-tax optimization and generational succession frameworks.</li>
+              <li>• Continuous quarterly valuation audits and yield rebalancing.</li>
+            </ul>
+            <a href="contact.html?service=wealth" class="btn btn-gold btn-sm">Consult Wealth Strategists</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: COMMERCIAL REAL ESTATE & SYNDICATION -->
+    <section class="section services-snap-section">
+      <div class="snap-section-line"></div>
+      <span class="snap-section-number">05</span>
+      <div class="container">
+        <div class="snap-content">
+          <div class="section-header">
+            <span class="section-tag">Institutional Capital</span>
+            <h2 class="section-title">Commercial Portfolios & <span class="gold-gradient-text">Joint Ventures</span></h2>
+            <p class="section-description">Connecting institutional equity with Class-A office towers, luxury hospitality resorts, and prime mixed-use developments.</p>
+          </div>
+
+          <div class="advantage-grid">
+            <div class="advantage-card">
+              <h3 class="advantage-title">Luxury Hospitality</h3>
+              <p class="advantage-desc">Boutique 5-star hotel acquisitions and private resort developments across the Mediterranean, Caribbean, and Swiss Alps.</p>
+            </div>
+            <div class="advantage-card">
+              <h3 class="advantage-title">Prime Retail Flagships</h3>
+              <p class="advantage-desc">High-street retail assets on Madison Avenue, Bond Street, and Rue du Faubourg Saint-Honoré with tier-1 luxury brand tenancies.</p>
+            </div>
+            <div class="advantage-card">
+              <h3 class="advantage-title">Development Equity</h3>
+              <p class="advantage-desc">Direct LP and GP co-investment structures for greenfield biophilic master-planned luxury communities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: ARCHITECTURAL RESTYLING & INTERIOR CURATION -->
+    <section class="section section-dark services-snap-section">
+      <div class="snap-section-line"></div>
+      <span class="snap-section-number">06</span>
+      <div class="container">
+        <div class="grid-2col">
+          <div class="snap-content">
+            <span class="section-tag">Aesthetic Curation</span>
+            <h2 class="section-title">Architectural Refinement & <span class="gold-gradient-text">Interior Staging</span></h2>
+            <p class="section-description" style="margin-bottom: 20px;">
+              In collaboration with the world's most lauded interior ateliers, we transform landmark properties with custom Italian marble, museum lighting, and bespoke furnishings.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px;">
+              Our staging elevates transaction velocity, securing an average 18% premium over unstaged comparable estates.
+            </p>
+            <a href="contact.html?service=design" class="btn btn-outline-gold btn-sm">View Design Portfolio</a>
+          </div>
+          <div class="snap-img-col">
+            <img src="./images/service-design.webp" alt="Interior Staging" style="border-radius: var(--radius-xl); border: 1px solid var(--gold-border);" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: LEGAL, TITLE & ESCROW CONCIERGE -->
+    <section class="section services-snap-section">
+      <div class="snap-section-line"></div>
+      <span class="snap-section-number">07</span>
+      <div class="container">
+        <div class="grid-2col">
+          <div class="snap-img-col img-from-left">
+            <img src="./images/service-legal.webp" alt="Legal Escrow Concierge" style="border-radius: var(--radius-xl); border: 1px solid var(--gold-border);" />
+          </div>
+          <div class="snap-content">
+            <span class="section-tag">Fiduciary Security</span>
+            <h2 class="section-title">Multi-Jurisdictional <span class="gold-gradient-text">Escrow & Legal Oversight</span></h2>
+            <p class="section-description" style="margin-bottom: 20px;">
+              Cross-border capital transfers require uncompromising regulatory diligence. Our international legal desk ensures total compliance with KYC, AML, and local real property registries.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 12px; color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 28px;">
+              <li>• Specialized escrow accounts in Swiss, UK, and US banking jurisdictions.</li>
+              <li>• Golden Visa and foreign residency real estate documentation.</li>
+              <li>• Confidential corporate nominee trust structures.</li>
+            </ul>
+            <a href="contact.html?service=legal" class="btn btn-gold btn-sm">Connect with Legal Desk</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: VIP RELOCATION, PRIVATE AVIATION & YACHT CONCIERGE -->
+    <section class="section section-dark services-snap-section">
+      <div class="snap-section-line"></div>
+      <span class="snap-section-number">08</span>
+      <div class="container">
+        <div class="grid-2col">
+          <div class="snap-content">
+            <span class="section-tag">Lifestyle Mobility</span>
+            <h2 class="section-title">Relocation, Aviation & <span class="gold-gradient-text">Super-Yacht Moorings</span></h2>
+            <p class="section-description" style="margin-bottom: 20px;">
+              Beyond acquisition, we manage every facet of physical relocation: private jet landing clearance, international schooling admissions, and secure deep-water marina slip allocations.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px;">
+              Enjoy turn-key arrival with fully staffed households, private security details, and bespoke sommelier-stocked cellars.
+            </p>
+            <a href="contact.html?service=relocation" class="btn btn-outline-gold btn-sm">Explore Relocation Services</a>
+          </div>
+          <div class="snap-img-col">
+            <img src="./images/service-relocation.webp" alt="VIP Relocation & Aviation" style="border-radius: var(--radius-xl); border: 1px solid var(--gold-border);" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: SCHEDULE VIP ADVISORY SESSION -->
+    <section class="section services-snap-section">
+      <div class="snap-section-line"></div>
+      <span class="snap-section-number">09</span>
+      <div class="container">
+        <div class="snap-content">
+          <div style="background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: var(--radius-xl); padding: 50px; text-align: center;">
+            <span class="section-tag">Private Appointment</span>
+            <h2 class="section-title" style="margin-bottom: 14px;">Schedule a <span class="gold-gradient-text">Confidential Advisory Session</span></h2>
+            <p class="section-description" style="max-width: 620px; margin: 0 auto 30px auto;">
+              Connect with a Senior Managing Director in New York, London, Geneva, Dubai, Monaco, or Tokyo.
+            </p>
+            <a href="contact.html" class="btn btn-gold btn-lg">Book Private Showing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  </div>
+
+  <!-- FOOTER -->
+ <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="nav-logo">
+            <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="nav-logo-fallback" style="display: none;">
+              <div class="logo-crest">S</div>
+              <div class="logo-text">STACK<span>LY</span></div>
+            </div>
+          </a>
+          <p>Global leader in ultra-prime residential brokerage, off-market acquisitions, and family office real estate asset management.</p>
+          <div class="footer-social-links">
+            <a href="404.html" class="footer-social-icon" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+</svg></a>
+            <a href="404.html" class="footer-social-icon" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg></a>
+            <a href="404.html" class="footer-social-icon" title="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+</svg></a>
+            <a href="404.html" class="footer-social-icon" title="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+</svg></a>
+          </div>
+        </div>
+
+        
+
+        <div>
+          <h4 class="footer-heading">Corporate</h4>
+          <div class="footer-links">
+             <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="services.html" class="footer-link">Services</a>
+            <a href="blog.html" class="footer-link">Insights</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Prime Portfolios</h4>
+          <div class="footer-links">
+            <a href="404.html" class="footer-link">Billionaires' Row Penthouses</a>
+            <a href="404.html" class="footer-link">French Riviera Waterfront</a>
+            <a href="404.html" class="footer-link">Palm Jumeirah Signature Villas</a>
+            <a href="404.html" class="footer-link">Bel-Air Glass Pavilions</a>
+            <a href="404.html" class="footer-link">Aspen Mountain Chalets</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Private Newsletter</h4>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault();">
+            <div class="newsletter-input-wrap">
+              <input type="email" class="newsletter-input" placeholder="Enter private email..." id="footerEmailServices" />
+              <button type="submit" class="btn btn-gold btn-sm">Join</button>
+            </div>
+            <div class="form-error-msg" id="footerEmailServicesError"></div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Strictly confidential. No third-party syndication.</span>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 STACKLY International Realty Ltd. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy Governance</a>
+          <a href="404.html">Anti-Money Laundering (AML)</a>
+          <a href="404.html">Terms of Escrow</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/property-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

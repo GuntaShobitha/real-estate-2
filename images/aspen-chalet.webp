@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="100%" height="100%" fill="#06080d"/>
+  <polygon points="100,450 400,180 650,480" fill="#101520" stroke="#FFF" stroke-width="1.5"/>
+  <polygon points="500,420 850,150 1150,460" fill="#0d121c" stroke="#FFF" stroke-width="1.5"/>
+  <polygon points="350,380 650,260 950,380 920,680 380,680" fill="#14110e" stroke="#BEA389" stroke-width="2"/>
+  <rect x="520" y="460" width="160" height="200" fill="rgba(190, 163, 137, 0.45)" stroke="#E0D2C5" stroke-width="2"/>
+  <rect x="40" y="40" width="340" height="54" rx="8" fill="rgba(0,0,0,0.75)" stroke="#BEA389" stroke-width="1"/>
+  <text x="60" y="66" font-family="'Cinzel', serif" font-size="14" font-weight="700" fill="#BEA389" letter-spacing="2">ASPEN SKI SANCTUARY</text>
+  <text x="60" y="82" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#FFF">Red Mountain Chalet • $21.75M</text>
+</svg>
