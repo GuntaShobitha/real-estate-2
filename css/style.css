@@ -454,6 +454,17 @@ button {
   transition: all var(--transition-normal);
 }
 
+.testimonial-image-container {
+  display: flex;
+  justify-content: center;
+}
+.testimonial-image {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-size: cover;
+}
+
 .nav-hamburger.active span:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
   background-color: var(--gold-primary);

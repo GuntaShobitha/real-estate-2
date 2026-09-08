@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAboutHoverGalleries();
   initShowroomSuccessModal();
   initGlobalPresenceHoverPreview();
-  initServicesSnapScroll();
   initBlogFormValidation();
   initScrollReveal();
   initScrollTop();
@@ -875,12 +874,16 @@ function initAboutHoverGalleries() {
 }
 
 /* ==========================================================================
-   17. GLOBAL PRESENCE SHOWROOM CARDS - HOVER TO SHOW BIG PREVIEW BOX
+   17. GLOBAL PRESENCE SHOWROOM CARDS - CLICK TO OPEN MODAL BOX
    ========================================================================== */
 function initShowroomSuccessModal() {
   const cards = document.querySelectorAll('.showroom-card');
   cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
+    // Add click event to open modal
+    card.addEventListener('click', (e) => {
+      // Don't trigger if clicking on a link inside the card
+      if (e.target.closest('a')) return;
+      
       const img = card.getAttribute('data-img');
       const city = card.getAttribute('data-city');
       const addr = card.getAttribute('data-address');
@@ -946,160 +949,7 @@ function initGlobalPresenceHoverPreview() {
 }
 
 /* ==========================================================================
-   19. SERVICES PAGE — FULL-SECTION SCROLL-SNAP WITH SLIDE-UP ANIMATION
-   ========================================================================== */
-function initServicesSnapScroll() {
-  const container = document.getElementById('servicesSnapContainer');
-  const sections = document.querySelectorAll('.services-snap-section');
-  const dots = document.querySelectorAll('.snap-nav-dot');
-  const progressBar = document.getElementById('snapProgressBar');
-  if (!container || !sections.length) return;
-
-  let currentIndex = 0;
-  let isScrolling = false;
-  let scrollTimeout = null;
-
-  // Activate the first section on load
-  sections[0].classList.add('snap-active');
-
-  // Update dots and progress
-  const updateUI = (index) => {
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-    if (progressBar) {
-      progressBar.style.width = `${((index + 1) / sections.length) * 100}%`;
-    }
-    currentIndex = index;
-  };
-
-  // Scroll to a specific section
-  const scrollToSection = (index) => {
-    if (index < 0 || index >= sections.length || isScrolling) return;
-    isScrolling = true;
-    sections[index].scrollIntoView({ behavior: 'smooth' });
-    updateUI(index);
-    // Activate section animation
-    sections.forEach((sec, i) => {
-      sec.classList.toggle('snap-active', i === index);
-    });
-    setTimeout(() => { isScrolling = false; }, 900);
-  };
-
-  // IntersectionObserver to detect which section is visible
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-        const idx = Array.from(sections).indexOf(entry.target);
-        if (idx !== -1) {
-          updateUI(idx);
-          sections.forEach((sec, i) => {
-            sec.classList.toggle('snap-active', i === idx);
-          });
-        }
-      }
-    });
-  }, { threshold: 0.5, root: container });
-
-  sections.forEach(sec => observer.observe(sec));
-
-  // Dot click navigation
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const idx = parseInt(dot.getAttribute('data-index'), 10);
-      scrollToSection(idx);
-    });
-  });
-
-  /* ------------------------------------------------------------------
-     FOOTER HAND-OFF
-
-     The slide deck is its own 100vh inner scroller, so the window only
-     ever scrolls past the LAST slide to reveal the footer. That hand-off
-     relies on native scroll chaining, which does not happen reliably in
-     every browser / pointer position. This makes it explicit:
-
-       • Scrolling down while the deck is at its end opens the footer,
-         no matter where the pointer is.
-       • Scrolling up while the footer is open closes it first; the deck
-         only scrolls again once the footer is fully out of the way.
-     ------------------------------------------------------------------ */
-  const lastSectionIndex = sections.length - 1;
-  const isFooterOpen = () => window.scrollY > 0;
-  const isDeckAtBottom = () => container.scrollTop + container.clientHeight >= container.scrollHeight - 2;
-  const windowMaxScroll = () => Math.max(document.documentElement.scrollHeight - window.innerHeight, 0);
-
-  // The page declares `scroll-behavior: smooth` on <html>, which would make
-  // per-wheel scrollBy() calls animate. Temporarily disable it while the
-  // user is wheeling so boundary motion stays native and continuous.
-  let smoothResetTimer = null;
-  const windowScrollByPx = (dy) => {
-    document.documentElement.style.scrollBehavior = 'auto';
-    window.scrollBy(0, dy);
-    clearTimeout(smoothResetTimer);
-    smoothResetTimer = setTimeout(() => {
-      document.documentElement.style.scrollBehavior = '';
-    }, 150);
-  };
-
-  const revealFooter = () => {
-    window.scrollTo({ top: windowMaxScroll(), behavior: 'smooth' });
-  };
-
-  window.addEventListener('wheel', (e) => {
-    if (e.ctrlKey) return; // never hijack pinch-zoom gestures
-    let dy = e.deltaY;
-    if (e.deltaMode === 1) dy *= 16;                    // lines -> px
-    else if (e.deltaMode === 2) dy *= window.innerHeight; // pages -> px
-    if (!dy) return;
-
-    if (dy < 0) {
-      // Upward scroll with the footer open: close the footer first,
-      // regardless of pointer position. Without this, the browser would
-      // scroll the hidden deck underneath instead.
-      if (isFooterOpen()) {
-        e.preventDefault();
-        windowScrollByPx(dy);
-      }
-      return;
-    }
-
-    // Downward scroll once the last slide is reached: open the footer,
-    // regardless of pointer position. Between slides the container's own
-    // snap scrolling handles the gesture.
-    if (!isFooterOpen() && isDeckAtBottom()) {
-      e.preventDefault();
-      windowScrollByPx(dy);
-    }
-  }, { passive: false });
-
-  // Keyboard navigation (also crosses the deck -> footer boundary)
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-      e.preventDefault();
-      if (isFooterOpen()) {
-        // Keep scrolling through the footer
-        const remaining = windowMaxScroll() - window.scrollY;
-        if (remaining > 0) {
-          window.scrollBy({ top: Math.min(remaining, window.innerHeight * 0.9), behavior: 'smooth' });
-        }
-      } else if (currentIndex < lastSectionIndex) {
-        scrollToSection(currentIndex + 1);
-      } else {
-        revealFooter();
-      }
-    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-      e.preventDefault();
-      if (isFooterOpen()) {
-        // Close the footer first, then the deck can scroll back up
-        window.scrollBy({ top: -window.innerHeight * 0.9, behavior: 'smooth' });
-      } else {
-        scrollToSection(currentIndex - 1);
-      }
-    }
-  });
-}
-
-/* ==========================================================================
-   20. BLOG PAGE — JAVASCRIPT FORM VALIDATION (No HTML Validation)
+   19. BLOG PAGE — JAVASCRIPT FORM VALIDATION (No HTML Validation)
    ========================================================================== */
 function initBlogFormValidation() {
   const validateEmail = (email) => {
@@ -1166,7 +1016,7 @@ function initBlogFormValidation() {
 
 
 /* ==========================================================================
-   21. LUXURY WEBP IMAGE REPOSITORY
+   20. LUXURY WEBP IMAGE REPOSITORY
    ========================================================================== */
 const REALTIME_WEBP_IMAGES = {
   // Properties
@@ -1242,4 +1092,4 @@ function initLuxuryImageGenerators() {
       img.loading = 'lazy';
     }
   });
-}
+}

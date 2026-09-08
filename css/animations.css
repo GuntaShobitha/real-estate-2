@@ -171,123 +171,34 @@
 }
 
 /* ==========================================================================
-   SERVICES PAGE — FULL-SECTION SCROLL-SNAP SLIDE-UP ANIMATION
+   SERVICES PAGE — NORMAL STYLING (Like Index/Contact Pages)
    ========================================================================== */
-.services-snap-container {
-  height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+/* Normal grid layout for services */
+.img-col {
+  flex: 1;
 }
 
-.services-snap-container::-webkit-scrollbar {
-  width: 6px;
+.content-col {
+  flex: 1;
 }
 
-.services-snap-container::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.services-snap-container::-webkit-scrollbar-thumb {
-  background: rgba(190, 163, 137, 0.4);
-  border-radius: 3px;
-}
-
-.services-snap-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(190, 163, 137, 0.7);
-}
-
-.services-snap-section {
-  min-height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+.grid-2col {
   display: flex;
+  gap: 40px;
   align-items: center;
-  position: relative;
-  overflow: hidden;
 }
 
-/* Slide-up entrance animation for each snap section */
-.services-snap-section {
-  opacity: 0;
-  transform: translateY(80px);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+@media (max-width: 768px) {
+  .grid-2col {
+    flex-direction: column;
+  }
 }
-
-.services-snap-section.snap-active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Section number indicator */
-.snap-section-number {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  font-family: var(--font-serif);
-  font-size: 5rem;
-  font-weight: 900;
-  color: rgba(190, 163, 137, 0.07);
-  line-height: 1;
-  z-index: 0;
-  pointer-events: none;
-  transition: all 0.6s ease;
-}
-
-.services-snap-section.snap-active .snap-section-number {
-  color: rgba(190, 163, 137, 0.12);
-  transform: translateY(-10px);
-}
-
-/* Gold accent line that grows on activation */
-.snap-section-line {
-  position: absolute;
   left: 0;
   top: 0;
   width: 4px;
-  height: 0;
+  height: 100%;
   background: linear-gradient(180deg, #BEA389, #E0D2C5, #BEA389);
   z-index: 5;
-  transition: height 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
-}
-
-.services-snap-section.snap-active .snap-section-line {
-  height: 100%;
-}
-
-/* Content stagger animations inside snap sections */
-.snap-content > * {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.snap-active .snap-content > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
-.snap-active .snap-content > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
-.snap-active .snap-content > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
-.snap-active .snap-content > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.45s; }
-.snap-active .snap-content > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.55s; }
-.snap-active .snap-content > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.65s; }
-.snap-active .snap-content > *:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 0.75s; }
-
-/* Image slide-in from side */
-.snap-img-col {
-  opacity: 0;
-  transform: translateX(60px) scale(0.95);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s,
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
-}
-
-.snap-img-col.img-from-left {
-  transform: translateX(-60px) scale(0.95);
-}
-
-.snap-active .snap-img-col {
-  opacity: 1;
-  transform: translateX(0) scale(1);
 }
 
 /* Dot navigation on the right */
@@ -316,83 +227,6 @@
 .snap-nav-dot:hover {
   background: rgba(190, 163, 137, 0.5);
   transform: scale(1.3);
-}
-
-.snap-nav-dot.active {
-  background: #BEA389;
-  border-color: #BEA389;
-  width: 12px;
-  height: 24px;
-  border-radius: 6px;
-  box-shadow: 0 0 12px rgba(190, 163, 137, 0.6);
-}
-
-.snap-nav-dot .dot-label {
-  position: absolute;
-  right: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  background: rgba(10, 10, 10, 0.9);
-  border: 1px solid rgba(190, 163, 137, 0.3);
-  padding: 4px 12px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  color: #BEA389;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  letter-spacing: 0.5px;
-}
-
-.snap-nav-dot:hover .dot-label {
-  opacity: 1;
-}
-
-/* Progress bar at top */
-.snap-progress-bar {
-  position: fixed;
-  top: var(--header-height);
-  left: 0;
-  width: 0%;
-  height: 3px;
-  background: linear-gradient(90deg, #BEA389, #E0D2C5);
-  z-index: 1001;
-  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Responsive for snap sections */
-@media (max-width: 1024px) {
-  .services-snap-section {
-    min-height: auto;
-    padding: 80px 0;
-  }
-  .snap-nav-dots {
-    display: none;
-  }
-  .snap-section-number {
-    font-size: 3.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .services-snap-container {
-    scroll-snap-type: none;
-  }
-  .services-snap-section {
-    min-height: auto;
-    scroll-snap-align: none;
-    padding: 60px 0;
-  }
-  .snap-nav-dots {
-    display: none;
-  }
-  .snap-section-number {
-    display: none;
-  }
-  .snap-section-line {
-    display: none;
-  }
 }
 
 /* ==========================================================================

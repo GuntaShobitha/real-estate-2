@@ -6,6 +6,26 @@
 const STACKLY_DATA = {
   properties: [
     {
+      id: "prop-09",
+      title: "The Riviera Heights Penthouse",
+      location: "Cap Ferrat, French Riviera, France",
+      city: "Monaco & Riviera",
+      price: "€18,900,000",
+      priceNum: 20500000,
+      beds: 4,
+      baths: 5,
+      sqft: "6,200 sq ft",
+      category: "penthouses",
+      type: "Clifftop Penthouse",
+      tag: "Mediterranean View",
+      image: "images/penthouse-sky.webp",
+      featured: true,
+      description: "Perched on the cliffs of Cap Ferrat with panoramic Mediterranean views, this refined penthouse features private terrace, smart home automation, concierge service, and direct sea access via private elevator.",
+      amenities: ["Private Terrace", "Smart Home", "24/7 Concierge", "Sea Access Elevator", "Wine Cellar", "Security Detail"],
+      virtualTourAvailable: true,
+      status: "Active"
+    },
+    {
       id: "prop-01",
       title: "The Sky Crest Penthouse",
       location: "Billionaires' Row, Manhattan, NY",

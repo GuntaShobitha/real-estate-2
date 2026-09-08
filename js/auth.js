@@ -107,7 +107,7 @@ function initLoginForm() {
       isLoggedIn: true,
       role: role,
       email: email,
-      name: role === 'admin' ? 'Chief Executive Administrator' : (email.split('@')[0] || 'Private Client'),
+      name: email.split('@')[0] || 'Administrator',
       loginTime: new Date().toISOString()
     };
     localStorage.setItem('stackly_auth_session', JSON.stringify(userSession));

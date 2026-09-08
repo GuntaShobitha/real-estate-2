@@ -56,13 +56,16 @@ function initDashboardSidebar() {
   if (!toggleBtn || !sidebar) return;
 
   toggleBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('open');
+    const isOpen = sidebar.classList.toggle('open');
+    // Lock/unlock body scroll when sidebar opens/closes
+    document.body.classList.toggle('sidebar-open', isOpen);
   });
 
   // Close sidebar on outer click for mobile
   document.addEventListener('click', (e) => {
     if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
       sidebar.classList.remove('open');
+      document.body.classList.remove('sidebar-open');
     }
   });
 }
